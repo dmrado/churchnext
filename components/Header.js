@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { CONTACTS } from "./content"
 
 const navs = [
   {
@@ -31,15 +32,14 @@ const navs = [
 const Header = () => {
   return (
     <>
-
       {/* ======= Header ======= */}
       <header id="header" className="fixed-top">
         <div className="container d-flex align-items-center justify-content-between">
-          <a href="index.html" className="logo">
+          <Link href="/" className="logo">
             <img src="/assets/img/logo.png" alt="" className="img-fluid" />
-          </a>
+          </Link>
           {/* Uncomment below if you prefer to use text as a logo */}
-          {/* <h1 class="logo"><a href="index.html">Butterfly</a></h1> */}
+          {/* <h1 class="logo"><a href="index.html">Церковь</a></h1> */}
           <nav id="navbar" className="navbar">
             <ul>
               {navs.map((nav, item) => (
@@ -51,20 +51,27 @@ const Header = () => {
               ))}
             </ul>
             <i className="bi bi-list mobile-nav-toggle" />
+            <Link
+              href={CONTACTS.refWhatsApp}
+              className="btn btn-sm btn-info"
+              // style={{ color: "#fff" }}
+            >
+              <div className="lign-items-end">Связаться</div>
+            </Link>
           </nav>
           {/* .navbar */}
         </div>
       </header>
+      <div className="mt-20"></div>
       {/* End Header */}
     </>
   )
 }
 export default Header
 
-
 // <li>
-//               <a className="nav-link scrollto" href="#hero">
-//                 Home
+//               <a className="nav-link scrollto" href="#about">
+//                 About
 //               </a>
 //             </li>
 // <li>

@@ -1,3 +1,4 @@
+import AboutPage from '/components/AboutPage'
 import {Metadata} from 'next'
 
 export const metadata = {
@@ -6,6 +7,8 @@ export const metadata = {
 }
 
 const About = () => {
-    return <h1>About</h1>
+    return <>
+    <AboutPage/>
+    </>
 }
-export default About
+export default AboutPage
