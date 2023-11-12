@@ -53,10 +53,10 @@ const Header = () => {
             <i className="bi bi-list mobile-nav-toggle" />
             <Link
               href={CONTACTS.refWhatsApp}
-              className="btn btn-sm btn-info"
+              className="btn btn-info"
               // style={{ color: "#fff" }}
             >
-              <div className="lign-items-end">Связаться</div>
+              <div className="d-flex justify-items-center align-items-center lign-items-end">Связаться</div>
             </Link>
           </nav>
           {/* .navbar */}
