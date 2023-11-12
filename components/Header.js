@@ -1,62 +1,135 @@
-import Link from "next/link";
+import Link from "next/link"
 
 const navs = [
   {
     href: "/",
     name: "Церковь",
-    className: "btn btn-primary",
+    className: "nav-link scrollto active",
   },
   {
     href: "/about",
     name: "О нас",
-    className: "btn btn-danger",
+    className: "nav-link scrollto active",
   },
   {
     href: "/mission",
     name: "Миссия",
-    className: "btn btn-success",
+    className: "nav-link scrollto active",
   },
   {
     href: "/posts",
     name: "Блог",
-    className: "btn btn-warning",
+    className: "nav-link scrollto active",
   },
   {
     href: "/contacts",
     name: "Контакты",
-    className: "btn btn-secondary",
+    className: "nav-link scrollto active",
   },
-];
+]
 
 const Header = () => {
   return (
     <>
-     <header className="flex justify-content min-h-screen items-start">
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-           
-              <ul>
-                {navs.map((nav, item) => (
-                  <li key={item}>
-                    <Link href={nav.href}>
-                      <div className={nav.className}>{nav.name}</div>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-              
-      <Link href='/'><div className='btn btn-primary'>Церковь</div></Link>
-      <Link href='/about'><div className='btn btn-danger'>О нас</div></Link>
-      <Link href='/mission'><div className='btn btn-success'>Миссия</div></Link>
-      <Link href='/posts'><div className='btn btn-warning'>Блог</div></Link>
-      <Link href='/contacts'><div className='btn btn-secondary'>Контакты</div></Link>
 
-          </div>
+      {/* ======= Header ======= */}
+      <header id="header" className="fixed-top">
+        <div className="container d-flex align-items-center justify-content-between">
+          <a href="index.html" className="logo">
+            <img src="/assets/img/logo.png" alt="" className="img-fluid" />
+          </a>
+          {/* Uncomment below if you prefer to use text as a logo */}
+          {/* <h1 class="logo"><a href="index.html">Butterfly</a></h1> */}
+          <nav id="navbar" className="navbar">
+            <ul>
+              {navs.map((nav, item) => (
+                <li>
+                  <div className={nav.className}>
+                    <Link href={nav.href}>{nav.name}</Link>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <i className="bi bi-list mobile-nav-toggle" />
+          </nav>
+          {/* .navbar */}
         </div>
-      </div>
       </header>
+      {/* End Header */}
     </>
-  );
-};
-export default Header;
+  )
+}
+export default Header
+
+
+// <li>
+//               <a className="nav-link scrollto" href="#hero">
+//                 Home
+//               </a>
+//             </li>
+// <li>
+//               <a className="nav-link scrollto" href="#about">
+//                 About
+//               </a>
+//             </li>
+//             <li>
+//               <a className="nav-link scrollto" href="#services">
+//                 Services
+//               </a>
+//             </li>
+//             <li>
+//               <a className="nav-link scrollto " href="#portfolio">
+//                 Portfolio
+//               </a>
+//             </li>
+//             <li>
+//               <a className="nav-link scrollto" href="#team">
+//                 Team
+//               </a>
+//             </li>
+//             <li className="dropdown">
+//               <a href="#">
+//                 <span>Drop Down</span> <i className="bi bi-chevron-down" />
+//               </a>
+//               <ul>
+//                 <li>
+//                   <a href="#">Drop Down 1</a>
+//                 </li>
+//                 <li className="dropdown">
+//                   <a href="#">
+//                     <span>Deep Drop Down</span> <i className="bi bi-chevron-right" />
+//                   </a>
+//                   <ul>
+//                     <li>
+//                       <a href="#">Deep Drop Down 1</a>
+//                     </li>
+//                     <li>
+//                       <a href="#">Deep Drop Down 2</a>
+//                     </li>
+//                     <li>
+//                       <a href="#">Deep Drop Down 3</a>
+//                     </li>
+//                     <li>
+//                       <a href="#">Deep Drop Down 4</a>
+//                     </li>
+//                     <li>
+//                       <a href="#">Deep Drop Down 5</a>
+//                     </li>
+//                   </ul>
+//                 </li>
+//                 <li>
+//                   <a href="#">Drop Down 2</a>
+//                 </li>
+//                 <li>
+//                   <a href="#">Drop Down 3</a>
+//                 </li>
+//                 <li>
+//                   <a href="#">Drop Down 4</a>
+//                 </li>
+//               </ul>
+//             </li>
+//             <li>
+//               <a className="nav-link scrollto" href="#contact">
+//                 Contact
+//               </a>
+//             </li>
